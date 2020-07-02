@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "md2docx-resharp": {
+      "commandName": "Project",
+      "commandLineArgs": "-i test.md -o test.docx -c test.c.json -r test.r.json",
+      "workingDirectory": "C:\\Users\\Thinker-Z\\Desktop"
+    }
+  }
+}
