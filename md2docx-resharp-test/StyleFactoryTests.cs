@@ -21,12 +21,15 @@ namespace md2docx_resharp_test {
 			Rule[] rulesDictionary = ruleJsonSerializer.ParseJson(json);
 
 			StyleFactory styleFactory = new StyleFactory();
-			Style result = styleFactory.GenerateStyle(rulesDictionary);
+			Style[] result = styleFactory.GenerateStyles(rulesDictionary);
 
-			// output.WriteLine(expected.OuterXml);
-			// output.WriteLine(result.OuterXml);
+			Assert.Equal(result.Length, expected.Length);
+			for(int i = 0; i < result.Length; i += 1) {
 
-			Assert.Equal(result, expected);
+				output.WriteLine(expected[i].OuterXml);
+				output.WriteLine(result[i].OuterXml);
+				Assert.Equal(result[i].OuterXml, expected[i].OuterXml);
+            }
 		}
 	}
 	public class CSUStyleTestData : IEnumerable<object[]> {
