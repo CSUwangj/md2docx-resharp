@@ -25,6 +25,11 @@ Opntions:");
             options.WriteOptionDescriptions(Console.Out);
         }
 
+        /// <summary>
+        /// parse command args return a object
+        /// </summary>
+        /// <param name="args">command line args</param>
+        /// <returns>RunArgs</returns>
         private static RunArgs ParseArgs(string[] args) {
             RunArgs runArgs = new RunArgs();
             bool showHelp = false;
