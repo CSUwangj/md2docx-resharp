@@ -1,8 +1,16 @@
 ﻿using System;
+using System.Linq;
+using DocumentFormat.OpenXml.Drawing;
 using Mono.Options;
 
 namespace md2docx_resharp
 {
+    class RunArgs {
+        public string MarkdonwPath { get; set; }
+        public string DocxPath { get; set; }
+        public string RulesPath { get; set; }
+        public string ConfigPath { get; set; }
+    }
     class Program
     {
         /// <summary>
@@ -17,55 +25,58 @@ Opntions:");
             options.WriteOptionDescriptions(Console.Out);
         }
 
-        static void Main(string[] args)
-        {
-            string markdonwPath = "";
-            string docxPath = "";
-            string rulesPath = "";
-            string configPath = "";
+        private static RunArgs ParseArgs(string[] args) {
+            RunArgs runArgs = new RunArgs();
             bool showHelp = false;
+
             OptionSet p = new OptionSet
             {
                 {
                     "i|input=", "{INPUT} markdown file path.",
-                    v => markdonwPath = v
+                    v => runArgs.MarkdonwPath = v
                 },
                 {
                     "o|output=", "{OUTPUT} docx file path.",
-                    v => docxPath = v
+                    v => runArgs.DocxPath = v
                 },
                 {
                     "r|rules=", "{RULES} for pure text block",
-                    v => rulesPath = v
+                    v => runArgs.RulesPath = v
                 },
                 {
                     "c|config=", "{CONFIG} file for coverting",
-                    v => configPath = v
+                    v => runArgs.ConfigPath = v
                 },
-                {   
+                {
                     "h|help", "show this message and exit",
-                    v => showHelp = v != null 
+                    v => showHelp = v != null
                 },
             };
 
-            try
-            {
+            try {
                 p.Parse(args);
-            }
-            catch (OptionException e)
-            {
+            } catch (OptionException e) {
                 Console.Write("md2docx: ");
                 Console.WriteLine(e.Message);
                 Console.WriteLine("Try`md2docx --help' for more information.");
-                return;
+                Environment.Exit(1);
             }
 
-            if (showHelp || markdonwPath == "" || configPath == "" || rulesPath == "" || docxPath == "")
-            {
+            if (showHelp) {
                 Usage(p);
-                return;
+                Environment.Exit(0);
             }
 
+            if (runArgs.GetType().GetProperties()
+                .Any(p => string.IsNullOrWhiteSpace((p.GetValue(runArgs) as string)))) {
+                Usage(p);
+                Environment.Exit(1);
+            }
+            return runArgs;
+        }
+        static void Main(string[] args)
+        {
+            RunArgs runArgs = ParseArgs(args);
         }
     }
 }
