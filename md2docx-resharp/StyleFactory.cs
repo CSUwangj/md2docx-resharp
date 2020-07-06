@@ -35,22 +35,22 @@ namespace md2docx_resharp
 
     public class RuleJsonSerializer
     {
-        public Rule[] ParseJson(string rules)
+        public List<Rule> ParseJson(string rules)
         {
             var options = new JsonSerializerOptions();
             Dictionary<string, Rule> rulesDictionary = JsonSerializer.Deserialize<Dictionary<string, Rule>>(rules, options);
-            return rulesDictionary.Select(item => item.Value).ToArray();
+            return rulesDictionary.Values.ToList();
         }
     }
     public class StyleFactory
     {
-        public Style[] GenerateStyles(Rule[] rules)
+        public List<Style> GenerateStyles(List<Rule> rules)
         {
             List<Style> styles = new List<Style>();
             foreach (Rule rule in rules) {
                 styles.Add(GenerateStyle(rule));
             }
-            return styles.ToArray();
+            return styles;
         }
 
         private Style GenerateStyle(Rule rule) {
