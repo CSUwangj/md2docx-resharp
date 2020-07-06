@@ -18,10 +18,10 @@ namespace md2docx_resharp_test {
 		[ClassData(typeof(CSUStyleTestData))]
 		public void CSUStyleTests(string json, Style[] expected) {
 			RuleJsonSerializer ruleJsonSerializer = new RuleJsonSerializer();
-			Rule[] rulesDictionary = ruleJsonSerializer.ParseJson(json);
+			Rule[] rules = ruleJsonSerializer.ParseJson(json);
 
 			StyleFactory styleFactory = new StyleFactory();
-			Style[] result = styleFactory.GenerateStyles(rulesDictionary);
+			Style[] result = styleFactory.GenerateStyles(rules);
 
 			Assert.Equal(result.Length, expected.Length);
 			for(int i = 0; i < result.Length; i += 1) {
