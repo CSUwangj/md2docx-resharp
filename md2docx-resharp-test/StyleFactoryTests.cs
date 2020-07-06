@@ -16,15 +16,15 @@ namespace md2docx_resharp_test {
 
 		[Theory]
 		[ClassData(typeof(CSUStyleTestData))]
-		public void CSUStyleTests(string json, Style[] expected) {
+		public void CSUStyleTests(string json, List<Style> expected) {
 			RuleJsonSerializer ruleJsonSerializer = new RuleJsonSerializer();
-			Rule[] rules = ruleJsonSerializer.ParseJson(json);
+			List<Rule> rules = ruleJsonSerializer.ParseJson(json);
 
 			StyleFactory styleFactory = new StyleFactory();
-			Style[] result = styleFactory.GenerateStyles(rules);
+			List<Style> result = styleFactory.GenerateStyles(rules);
 
-			Assert.Equal(result.Length, expected.Length);
-			for(int i = 0; i < result.Length; i += 1) {
+			Assert.Equal(result.Count, expected.Count);
+			for(int i = 0; i < result.Count; i += 1) {
 
 				output.WriteLine(expected[i].OuterXml);
 				output.WriteLine(result[i].OuterXml);
