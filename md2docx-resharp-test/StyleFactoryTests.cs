@@ -138,7 +138,7 @@ namespace md2docx_resharp_test {
                   ""LineSpacingValues"": 1.5
                 }
 			}",
-				new Style[] {
+				new List<Style> {
 					new Style {
 						Type = StyleValues.Paragraph,
 						StyleId = "heading 1",
