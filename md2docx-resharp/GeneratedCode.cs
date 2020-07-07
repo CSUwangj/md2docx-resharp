@@ -1,4 +1,6 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
+﻿using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Packaging;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace md2docx_resharp {
     class GeneratedCode {
@@ -761,6 +763,206 @@ namespace md2docx_resharp {
             latentStyles.Append(latentStyleExceptionInfo377);
 
             return latentStyles;
+        }
+
+        public static void GenerateFontTablePartContent(FontTablePart part) {
+            Fonts fonts1 = new Fonts() { MCAttributes = new MarkupCompatibilityAttributes() { Ignorable = "w14 w15 w16se w16cid w16 w16cex" } };
+            fonts1.AddNamespaceDeclaration("mc", "http://schemas.openxmlformats.org/markup-compatibility/2006");
+            fonts1.AddNamespaceDeclaration("r", "http://schemas.openxmlformats.org/officeDocument/2006/relationships");
+            fonts1.AddNamespaceDeclaration("w", "http://schemas.openxmlformats.org/wordprocessingml/2006/main");
+            fonts1.AddNamespaceDeclaration("w14", "http://schemas.microsoft.com/office/word/2010/wordml");
+            fonts1.AddNamespaceDeclaration("w15", "http://schemas.microsoft.com/office/word/2012/wordml");
+            fonts1.AddNamespaceDeclaration("w16cex", "http://schemas.microsoft.com/office/word/2018/wordml/cex");
+            fonts1.AddNamespaceDeclaration("w16cid", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
+            fonts1.AddNamespaceDeclaration("w16", "http://schemas.microsoft.com/office/word/2018/wordml");
+            fonts1.AddNamespaceDeclaration("w16se", "http://schemas.microsoft.com/office/word/2015/wordml/symex");
+
+            Font font1 = new Font() { Name = "Times New Roman" };
+            Panose1Number panose1Number1 = new Panose1Number() { Val = "02020603050405020304" };
+            FontCharSet fontCharSet1 = new FontCharSet() { Val = "00" };
+            FontFamily fontFamily1 = new FontFamily() { Val = FontFamilyValues.Roman };
+            Pitch pitch1 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature1 = new FontSignature() { UnicodeSignature0 = "E0002EFF", UnicodeSignature1 = "C000785B", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
+
+            font1.Append(panose1Number1);
+            font1.Append(fontCharSet1);
+            font1.Append(fontFamily1);
+            font1.Append(pitch1);
+            font1.Append(fontSignature1);
+
+            Font font2 = new Font() { Name = "宋体" };
+            AltName altName1 = new AltName() { Val = "SimSun" };
+            Panose1Number panose1Number2 = new Panose1Number() { Val = "02010600030101010101" };
+            FontCharSet fontCharSet2 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily2 = new FontFamily() { Val = FontFamilyValues.Auto };
+            Pitch pitch2 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature2 = new FontSignature() { UnicodeSignature0 = "00000003", UnicodeSignature1 = "288F0000", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "00040001", CodePageSignature1 = "00000000" };
+
+            font2.Append(altName1);
+            font2.Append(panose1Number2);
+            font2.Append(fontCharSet2);
+            font2.Append(fontFamily2);
+            font2.Append(pitch2);
+            font2.Append(fontSignature2);
+
+            Font font3 = new Font() { Name = "黑体" };
+            AltName altName2 = new AltName() { Val = "SimHei" };
+            Panose1Number panose1Number3 = new Panose1Number() { Val = "02010609060101010101" };
+            FontCharSet fontCharSet3 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily3 = new FontFamily() { Val = FontFamilyValues.Modern };
+            Pitch pitch3 = new Pitch() { Val = FontPitchValues.Fixed };
+            FontSignature fontSignature3 = new FontSignature() { UnicodeSignature0 = "800002BF", UnicodeSignature1 = "38CF7CFA", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "00040001", CodePageSignature1 = "00000000" };
+
+            font3.Append(altName2);
+            font3.Append(panose1Number3);
+            font3.Append(fontCharSet3);
+            font3.Append(fontFamily3);
+            font3.Append(pitch3);
+            font3.Append(fontSignature3);
+
+            Font font4 = new Font() { Name = "楷体_GB2312" };
+            AltName altName3 = new AltName() { Val = "微软雅黑" };
+            FontCharSet fontCharSet4 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily4 = new FontFamily() { Val = FontFamilyValues.Auto };
+            Pitch pitch4 = new Pitch() { Val = FontPitchValues.Default };
+            FontSignature fontSignature4 = new FontSignature() { UnicodeSignature0 = "00000000", UnicodeSignature1 = "00000000", UnicodeSignature2 = "00000000", UnicodeSignature3 = "00000000", CodePageSignature0 = "00040000", CodePageSignature1 = "00000000" };
+
+            font4.Append(altName3);
+            font4.Append(fontCharSet4);
+            font4.Append(fontFamily4);
+            font4.Append(pitch4);
+            font4.Append(fontSignature4);
+
+            Font font5 = new Font() { Name = "Consolas" };
+            Panose1Number panose1Number4 = new Panose1Number() { Val = "020B0609020204030204" };
+            FontCharSet fontCharSet5 = new FontCharSet() { Val = "00" };
+            FontFamily fontFamily5 = new FontFamily() { Val = FontFamilyValues.Modern };
+            Pitch pitch5 = new Pitch() { Val = FontPitchValues.Fixed };
+            FontSignature fontSignature5 = new FontSignature() { UnicodeSignature0 = "E00006FF", UnicodeSignature1 = "0000FCFF", UnicodeSignature2 = "00000001", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000019F", CodePageSignature1 = "00000000" };
+
+            font5.Append(panose1Number4);
+            font5.Append(fontCharSet5);
+            font5.Append(fontFamily5);
+            font5.Append(pitch5);
+            font5.Append(fontSignature5);
+
+            Font font6 = new Font() { Name = "华文楷体" };
+            AltName altName4 = new AltName() { Val = "STKaiti" };
+            Panose1Number panose1Number5 = new Panose1Number() { Val = "02010600040101010101" };
+            FontCharSet fontCharSet6 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily6 = new FontFamily() { Val = FontFamilyValues.Auto };
+            Pitch pitch6 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature6 = new FontSignature() { UnicodeSignature0 = "00000287", UnicodeSignature1 = "080F0000", UnicodeSignature2 = "00000010", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004009F", CodePageSignature1 = "00000000" };
+
+            font6.Append(altName4);
+            font6.Append(panose1Number5);
+            font6.Append(fontCharSet6);
+            font6.Append(fontFamily6);
+            font6.Append(pitch6);
+            font6.Append(fontSignature6);
+
+            Font font7 = new Font() { Name = "Times" };
+            AltName altName5 = new AltName() { Val = "Times New Roman" };
+            Panose1Number panose1Number6 = new Panose1Number() { Val = "02020603050405020304" };
+            FontCharSet fontCharSet7 = new FontCharSet() { Val = "00" };
+            FontFamily fontFamily7 = new FontFamily() { Val = FontFamilyValues.Roman };
+            Pitch pitch7 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature7 = new FontSignature() { UnicodeSignature0 = "E0002EFF", UnicodeSignature1 = "C000785B", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
+
+            font7.Append(altName5);
+            font7.Append(panose1Number6);
+            font7.Append(fontCharSet7);
+            font7.Append(fontFamily7);
+            font7.Append(pitch7);
+            font7.Append(fontSignature7);
+
+            Font font8 = new Font() { Name = "Cambria Math" };
+            Panose1Number panose1Number7 = new Panose1Number() { Val = "02040503050406030204" };
+            FontCharSet fontCharSet8 = new FontCharSet() { Val = "00" };
+            FontFamily fontFamily8 = new FontFamily() { Val = FontFamilyValues.Roman };
+            Pitch pitch8 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature8 = new FontSignature() { UnicodeSignature0 = "E00006FF", UnicodeSignature1 = "420024FF", UnicodeSignature2 = "02000000", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000019F", CodePageSignature1 = "00000000" };
+
+            font8.Append(panose1Number7);
+            font8.Append(fontCharSet8);
+            font8.Append(fontFamily8);
+            font8.Append(pitch8);
+            font8.Append(fontSignature8);
+
+            Font font9 = new Font() { Name = "XITS" };
+            AltName altName6 = new AltName() { Val = "Calibri" };
+            Panose1Number panose1Number8 = new Panose1Number() { Val = "00000000000000000000" };
+            FontCharSet fontCharSet9 = new FontCharSet() { Val = "00" };
+            FontFamily fontFamily9 = new FontFamily() { Val = FontFamilyValues.Modern };
+            NotTrueType notTrueType1 = new NotTrueType();
+            Pitch pitch9 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature9 = new FontSignature() { UnicodeSignature0 = "A00002FF", UnicodeSignature1 = "4003FDFF", UnicodeSignature2 = "00000020", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000009F", CodePageSignature1 = "00000000" };
+
+            font9.Append(altName6);
+            font9.Append(panose1Number8);
+            font9.Append(fontCharSet9);
+            font9.Append(fontFamily9);
+            font9.Append(notTrueType1);
+            font9.Append(pitch9);
+            font9.Append(fontSignature9);
+
+            Font font10 = new Font() { Name = "微软雅黑" };
+            AltName altName7 = new AltName() { Val = "Microsoft YaHei" };
+            Panose1Number panose1Number9 = new Panose1Number() { Val = "020B0503020204020204" };
+            FontCharSet fontCharSet10 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily10 = new FontFamily() { Val = FontFamilyValues.Swiss };
+            Pitch pitch10 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature10 = new FontSignature() { UnicodeSignature0 = "80000287", UnicodeSignature1 = "2ACF3C50", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004001F", CodePageSignature1 = "00000000" };
+
+            font10.Append(altName7);
+            font10.Append(panose1Number9);
+            font10.Append(fontCharSet10);
+            font10.Append(fontFamily10);
+            font10.Append(pitch10);
+            font10.Append(fontSignature10);
+
+            Font font11 = new Font() { Name = "等线 Light" };
+            Panose1Number panose1Number10 = new Panose1Number() { Val = "02010600030101010101" };
+            FontCharSet fontCharSet11 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily11 = new FontFamily() { Val = FontFamilyValues.Auto };
+            Pitch pitch11 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature11 = new FontSignature() { UnicodeSignature0 = "A00002BF", UnicodeSignature1 = "38CF7CFA", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004000F", CodePageSignature1 = "00000000" };
+
+            font11.Append(panose1Number10);
+            font11.Append(fontCharSet11);
+            font11.Append(fontFamily11);
+            font11.Append(pitch11);
+            font11.Append(fontSignature11);
+
+            Font font12 = new Font() { Name = "等线" };
+            AltName altName8 = new AltName() { Val = "DengXian" };
+            Panose1Number panose1Number11 = new Panose1Number() { Val = "02010600030101010101" };
+            FontCharSet fontCharSet12 = new FontCharSet() { Val = "86" };
+            FontFamily fontFamily12 = new FontFamily() { Val = FontFamilyValues.Auto };
+            Pitch pitch12 = new Pitch() { Val = FontPitchValues.Variable };
+            FontSignature fontSignature12 = new FontSignature() { UnicodeSignature0 = "A00002BF", UnicodeSignature1 = "38CF7CFA", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004000F", CodePageSignature1 = "00000000" };
+
+            font12.Append(altName8);
+            font12.Append(panose1Number11);
+            font12.Append(fontCharSet12);
+            font12.Append(fontFamily12);
+            font12.Append(pitch12);
+            font12.Append(fontSignature12);
+
+            fonts1.Append(font1);
+            fonts1.Append(font2);
+            fonts1.Append(font3);
+            fonts1.Append(font4);
+            fonts1.Append(font5);
+            fonts1.Append(font6);
+            fonts1.Append(font7);
+            fonts1.Append(font8);
+            fonts1.Append(font9);
+            fonts1.Append(font10);
+            fonts1.Append(font11);
+            fonts1.Append(font12);
+
+            part.Fonts = fonts1;
         }
 
     }
