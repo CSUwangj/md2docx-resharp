@@ -821,7 +821,7 @@ namespace md2docx_resharp {
             font3.Append(fontSignature3);
 
             Font font4 = new Font() { Name = "楷体_GB2312" };
-            AltName altName3 = new AltName() { Val = "微软雅黑" };
+            AltName altName3 = new AltName() { Val = "楷体" };
             FontCharSet fontCharSet4 = new FontCharSet() { Val = "86" };
             FontFamily fontFamily4 = new FontFamily() { Val = FontFamilyValues.Auto };
             Pitch pitch4 = new Pitch() { Val = FontPitchValues.Default };
@@ -847,14 +847,12 @@ namespace md2docx_resharp {
             font5.Append(fontSignature5);
 
             Font font6 = new Font() { Name = "华文楷体" };
-            AltName altName4 = new AltName() { Val = "STKaiti" };
             Panose1Number panose1Number5 = new Panose1Number() { Val = "02010600040101010101" };
             FontCharSet fontCharSet6 = new FontCharSet() { Val = "86" };
             FontFamily fontFamily6 = new FontFamily() { Val = FontFamilyValues.Auto };
             Pitch pitch6 = new Pitch() { Val = FontPitchValues.Variable };
             FontSignature fontSignature6 = new FontSignature() { UnicodeSignature0 = "00000287", UnicodeSignature1 = "080F0000", UnicodeSignature2 = "00000010", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004009F", CodePageSignature1 = "00000000" };
 
-            font6.Append(altName4);
             font6.Append(panose1Number5);
             font6.Append(fontCharSet6);
             font6.Append(fontFamily6);
@@ -862,14 +860,14 @@ namespace md2docx_resharp {
             font6.Append(fontSignature6);
 
             Font font7 = new Font() { Name = "Times" };
-            AltName altName5 = new AltName() { Val = "Times New Roman" };
+            AltName altName4 = new AltName() { Val = "Times New Roman" };
             Panose1Number panose1Number6 = new Panose1Number() { Val = "02020603050405020304" };
             FontCharSet fontCharSet7 = new FontCharSet() { Val = "00" };
             FontFamily fontFamily7 = new FontFamily() { Val = FontFamilyValues.Roman };
             Pitch pitch7 = new Pitch() { Val = FontPitchValues.Variable };
             FontSignature fontSignature7 = new FontSignature() { UnicodeSignature0 = "E0002EFF", UnicodeSignature1 = "C000785B", UnicodeSignature2 = "00000009", UnicodeSignature3 = "00000000", CodePageSignature0 = "000001FF", CodePageSignature1 = "00000000" };
 
-            font7.Append(altName5);
+            font7.Append(altName4);
             font7.Append(panose1Number6);
             font7.Append(fontCharSet7);
             font7.Append(fontFamily7);
@@ -890,7 +888,7 @@ namespace md2docx_resharp {
             font8.Append(fontSignature8);
 
             Font font9 = new Font() { Name = "XITS" };
-            AltName altName6 = new AltName() { Val = "Calibri" };
+            AltName altName5 = new AltName() { Val = "Calibri" };
             Panose1Number panose1Number8 = new Panose1Number() { Val = "00000000000000000000" };
             FontCharSet fontCharSet9 = new FontCharSet() { Val = "00" };
             FontFamily fontFamily9 = new FontFamily() { Val = FontFamilyValues.Modern };
@@ -898,7 +896,7 @@ namespace md2docx_resharp {
             Pitch pitch9 = new Pitch() { Val = FontPitchValues.Variable };
             FontSignature fontSignature9 = new FontSignature() { UnicodeSignature0 = "A00002FF", UnicodeSignature1 = "4003FDFF", UnicodeSignature2 = "00000020", UnicodeSignature3 = "00000000", CodePageSignature0 = "0000009F", CodePageSignature1 = "00000000" };
 
-            font9.Append(altName6);
+            font9.Append(altName5);
             font9.Append(panose1Number8);
             font9.Append(fontCharSet9);
             font9.Append(fontFamily9);
@@ -907,14 +905,12 @@ namespace md2docx_resharp {
             font9.Append(fontSignature9);
 
             Font font10 = new Font() { Name = "微软雅黑" };
-            AltName altName7 = new AltName() { Val = "Microsoft YaHei" };
             Panose1Number panose1Number9 = new Panose1Number() { Val = "020B0503020204020204" };
             FontCharSet fontCharSet10 = new FontCharSet() { Val = "86" };
             FontFamily fontFamily10 = new FontFamily() { Val = FontFamilyValues.Swiss };
             Pitch pitch10 = new Pitch() { Val = FontPitchValues.Variable };
             FontSignature fontSignature10 = new FontSignature() { UnicodeSignature0 = "80000287", UnicodeSignature1 = "2ACF3C50", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004001F", CodePageSignature1 = "00000000" };
 
-            font10.Append(altName7);
             font10.Append(panose1Number9);
             font10.Append(fontCharSet10);
             font10.Append(fontFamily10);
@@ -935,14 +931,14 @@ namespace md2docx_resharp {
             font11.Append(fontSignature11);
 
             Font font12 = new Font() { Name = "等线" };
-            AltName altName8 = new AltName() { Val = "DengXian" };
+            AltName altName6 = new AltName() { Val = "DengXian" };
             Panose1Number panose1Number11 = new Panose1Number() { Val = "02010600030101010101" };
             FontCharSet fontCharSet12 = new FontCharSet() { Val = "86" };
             FontFamily fontFamily12 = new FontFamily() { Val = FontFamilyValues.Auto };
             Pitch pitch12 = new Pitch() { Val = FontPitchValues.Variable };
             FontSignature fontSignature12 = new FontSignature() { UnicodeSignature0 = "A00002BF", UnicodeSignature1 = "38CF7CFA", UnicodeSignature2 = "00000016", UnicodeSignature3 = "00000000", CodePageSignature0 = "0004000F", CodePageSignature1 = "00000000" };
 
-            font12.Append(altName8);
+            font12.Append(altName6);
             font12.Append(panose1Number11);
             font12.Append(fontCharSet12);
             font12.Append(fontFamily12);
@@ -963,6 +959,7 @@ namespace md2docx_resharp {
             fonts1.Append(font12);
 
             part.Fonts = fonts1;
+
         }
 
     }

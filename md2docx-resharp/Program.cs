@@ -94,18 +94,17 @@ Opntions:");
             RuleJsonSerializer ruleJsonSerializer = new RuleJsonSerializer();
             var rules = ruleJsonSerializer.ParseJson(System.IO.File.ReadAllText(runArgs.ConfigPath));
 
-            using (WordprocessingDocument document = WordprocessingDocument.Create(runArgs.DocxPath, WordprocessingDocumentType.Document)) {
-                MainDocumentPart mainPart = document.AddMainDocumentPart();
-                GenerateMainPart(mainPart, markdown);
-                StyleDefinitionsPart styleDefinitionsPart = mainPart.AddNewPart<StyleDefinitionsPart>("Styles");
-                // TODO: latent config
-                GenerateStyleDefinitionsPartContent(styleDefinitionsPart, rules, true);
+            using WordprocessingDocument document = WordprocessingDocument.Create(runArgs.DocxPath, WordprocessingDocumentType.Document);
+            MainDocumentPart mainPart = document.AddMainDocumentPart();
+            GenerateMainPart(mainPart, markdown);
+            StyleDefinitionsPart styleDefinitionsPart = mainPart.AddNewPart<StyleDefinitionsPart>("Styles");
+            // TODO: latent config
+            GenerateStyleDefinitionsPartContent(styleDefinitionsPart, rules, true);
 
-                FontTablePart fontTablePart1 = mainPart.AddNewPart<FontTablePart>("FontTable");
-                GeneratedCode.GenerateFontTablePartContent(fontTablePart1);
+            FontTablePart fontTablePart1 = mainPart.AddNewPart<FontTablePart>("FontTable");
+            GeneratedCode.GenerateFontTablePartContent(fontTablePart1);
 
-                SetPackageProperties(document);
-            }
+            SetPackageProperties(document);
         }
 
         /// <summary>
