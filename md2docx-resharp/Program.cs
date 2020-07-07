@@ -41,8 +41,7 @@ Opntions:");
             RunArgs runArgs = new RunArgs();
             bool showHelp = false;
 
-            OptionSet p = new OptionSet
-            {
+            OptionSet p = new OptionSet {
                 {
                     "i|input=", "{INPUT} markdown file path.",
                     v => runArgs.MarkdonwPath = v
