@@ -6,8 +6,6 @@ using DocumentFormat.OpenXml.Drawing;
 using DocumentFormat.OpenXml.Office2010.ExcelAc;
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
-using Markdig;
-using Markdig.Syntax;
 using Mono.Options;
 
 namespace md2docx_resharp
@@ -89,15 +87,15 @@ Opntions:");
         {
             RunArgs runArgs = ParseArgs(args);
 
-            var markdown = Markdown.Parse(runArgs.MarkdonwPath);
+            // var markdown = Markdown.Parse(runArgs.MarkdonwPath);
             RuleJsonSerializer ruleJsonSerializer = new RuleJsonSerializer();
             var rules = ruleJsonSerializer.ParseJson(System.IO.File.ReadAllText(runArgs.ConfigPath));
 
             using WordprocessingDocument document = WordprocessingDocument.Create(runArgs.DocxPath, WordprocessingDocumentType.Document);
             MainDocumentPart mainPart = document.AddMainDocumentPart();
-            GenerateMainPart(mainPart, markdown);
+            GenerateMainPart(mainPart, runArgs.MarkdonwPath);
             StyleDefinitionsPart styleDefinitionsPart = mainPart.AddNewPart<StyleDefinitionsPart>("Styles");
-            // TODO: latent config
+            // TODO: latent config if needed
             GenerateStyleDefinitionsPartContent(styleDefinitionsPart, rules, true);
 
             FontTablePart fontTablePart1 = mainPart.AddNewPart<FontTablePart>("FontTable");
@@ -110,8 +108,8 @@ Opntions:");
         /// Generate document body
         /// </summary>
         /// <param name="mainPart">main body</param>
-        /// <param name="md">word document</param>
-        private static void GenerateMainPart(MainDocumentPart mainPart, MarkdownDocument md) {
+        /// <param name="md">markdown document</param>
+        private static void GenerateMainPart(MainDocumentPart mainPart, string md) {
             // TODO: fill function
             Document document1 = new Document() { MCAttributes = new MarkupCompatibilityAttributes() };
 
