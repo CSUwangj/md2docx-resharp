@@ -3,6 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30225.117
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{91260131-7FB9-4B58-8163-40E74A6F1789}"
+	ProjectSection(SolutionItems) = preProject
+		paket.dependencies = paket.dependencies
+	EndProjectSection
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "md2docx-resharp", "md2docx-resharp\md2docx-resharp.csproj", "{72950720-6E7C-44DC-B2AB-5A01FE4E7D6E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "md2docx-resharp-test", "md2docx-resharp-test\md2docx-resharp-test.csproj", "{49C617B7-6444-4D5E-AD20-7C069FC1FC22}"

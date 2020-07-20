@@ -3,6 +3,10 @@ source https://api.nuget.org/v3/index.json
 storage: none
 framework: netcoreapp3.1, netstandard2.0, netstandard2.1
 
-nuget Mono.Options
-nuget System.Drawing.Common
-nuget DocumentFormat.OpenXml
+nuget coverlet.collector 1.2.0
+nuget Microsoft.NET.Test.Sdk 16.5.0
+nuget Mono.Options 6.6.0.161
+nuget System.Drawing.Common 4.7.0
+nuget DocumentFormat.OpenXml 2.11.0
+nuget xunit 2.4.0
+nuget xunit.runner.visualstudio 2.4.0
