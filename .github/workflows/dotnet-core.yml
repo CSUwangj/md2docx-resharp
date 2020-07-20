@@ -15,15 +15,17 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Install dependencies
-      run: dotnet restore
+    - name: Install paket
+      run: dotnet tool restore
+    - name: Paket install dependencies
+      run: dotnet paket restore
     - name: Macos Install dependencies
       if: matrix.os == 'macos-latest'
       run: brew install mono-libgdiplus
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build --configuration Release
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
