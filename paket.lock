@@ -1,0 +1,14 @@
+STORAGE: NONE
+RESTRICTION: || (== netcoreapp3.1) (== netstandard2.0) (== netstandard2.1)
+NUGET
+  remote: https://api.nuget.org/v3/index.json
+    DocumentFormat.OpenXml (2.11.3)
+      System.IO.Packaging (>= 4.7)
+    Microsoft.NETCore.Platforms (3.1.1) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.0)) (&& (== netstandard2.1) (>= netcoreapp2.0))
+    Microsoft.Win32.SystemEvents (4.7) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.0)) (&& (== netstandard2.1) (>= netcoreapp2.0))
+      Microsoft.NETCore.Platforms (>= 3.1) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.0)) (&& (== netstandard2.1) (>= netcoreapp2.0))
+    Mono.Options (6.6.0.161)
+    System.Drawing.Common (4.7)
+      Microsoft.NETCore.Platforms (>= 3.1) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.0)) (&& (== netstandard2.1) (>= netcoreapp2.0))
+      Microsoft.Win32.SystemEvents (>= 4.7) - restriction: || (== netcoreapp3.1) (&& (== netstandard2.0) (>= netcoreapp2.0)) (&& (== netstandard2.1) (>= netcoreapp2.0))
+    System.IO.Packaging (4.7)
